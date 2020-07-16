@@ -6,7 +6,7 @@ import sys
 
 def main():
   # handle command line arguments
-  parser = argparse.ArgumentParser(description = "Program to transform correlation matrix to edgelists for further network creation")
+  parser = argparse.ArgumentParser(description = "Program to transform correlation matrix to edgelists for further network creation.")
   parser.add_argument("-cm", "--corrmat", help = "Path to correlation matrix")
   parser.add_argument("-pm", "--pmat", help = "Path to p value matrix")
   parser.add_argument("-clim", "--corrlimit", help = "correlation value threshold (Default: -0.7 | 0.7")
