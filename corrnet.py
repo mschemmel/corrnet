@@ -26,7 +26,7 @@ def main():
 
       # check if output path is provided
       output = args.output if args.output else os.getcwd()
-      pref = args.prefix if args.prefix else "corrnet"
+      pref = args.prefix if args.prefix else "corr_default"
       
       # create network
       data_net = etn.net(edges)
@@ -45,13 +45,10 @@ def main():
 
       edges.to_csv("{}/edge_list_{}.tsv".format(out_dir, pref), index = None, sep = '\t', mode = 'w')
       network = data_net.plot_network()
-      network.savefig(os.path.join(out_dir, "net.pdf"), bbox_inches = 'tight')
+      network.savefig(os.path.join(out_dir, "network.pdf"), bbox_inches = 'tight')
       
       degree_histogram = data_net.plot_degree_hist()
-      degree_histogram.savefig(os.path.join(out_dir, "hist.pdf"), bbox_inches = 'tight')
-
-      
-
+      degree_histogram.savefig(os.path.join(out_dir, "histogram.pdf"), bbox_inches = 'tight')
 
 if __name__ == "__main__":
   main()
