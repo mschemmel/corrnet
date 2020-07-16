@@ -34,9 +34,7 @@ python3 corrnet.py -cm correlation.tsv -pm pvalue.tsv --prefix firstproject
 ```
 
 ## Output
-
-- edgelist summary (columns: source, target, weight, pval, direction, color)
-- network summary
+- edgelist (columns: source, target, weight, pval, direction, color)
 - network plot
 - network degree distribution plot
 
