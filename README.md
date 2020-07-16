@@ -24,7 +24,7 @@ Optional:
     -pm     p-value matrix
     -clim   Threshold of correlation matrix (Default: 0.7)
     -plim   Threshold of p-value matrix (Default: 0.05)
-    -out    Path for generated output
+    -out    Path for generated output. If not provided, current working directory is used.
     -pre    Prefix used to name output folder and files (Default: corrnet)
 
 ### Run
@@ -35,7 +35,7 @@ python3 corrnet.py -cm correlation.tsv -pm pvalue.tsv --prefix firstproject
 
 ## Output
 
-- edgelist summary
+- edgelist summary (columns: source, target, weight, pval, direction, color)
 - network summary
 - network plot
 - network degree distribution plot
