@@ -2,6 +2,7 @@ import corr2edge as cte
 import edge2net as etn
 import argparse
 import os
+import sys
 
 def main():
   # handle command line arguments
@@ -38,10 +39,14 @@ def main():
       # save all files
       # create final output folder
       out_dir = os.path.join(output, pref)
-      if os.path.isdir(out_dir):
-          pass
-      else:
-          os.mkdir(out_dir)
+      try:
+          if os.path.isdir(out_dir):
+              pass
+          else:
+              os.mkdir(out_dir)
+      except FileNotFoundError:
+          print("ERROR: Output directory could not be created: Path not found.")
+          sys.exit(0)
 
       edges.to_csv("{}/edge_list_{}.tsv".format(out_dir, pref), index = None, sep = '\t', mode = 'w')
       network = data_net.plot_network()
