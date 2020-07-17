@@ -1,0 +1,19 @@
+dist: xenial
+language: python
+python:
+        - "3.8"
+        - "3.7"
+        - "3.6"
+        - "3.5"
+        - "3.4"
+addons:
+        apt:
+                packages:
+                        - "python3"
+                        - "python3-pip"
+before_install:
+        - pip3 install -r requirements.txt
+script:
+        - python3 corrnet.py - cm ./data/random_correlation.tsv -plim ./data/random_p_value.tsv -p firstproject
+notification:
+        email: false
