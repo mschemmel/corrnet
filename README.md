@@ -1,7 +1,5 @@
 ![GitHub](https://img.shields.io/github/license/mschemmel/corrnet)
-
 <img src="https://img.shields.io/badge/python-3.4--3.8-9cf.svg?style=flat">
-
 [![BuildStatus](https://travis-ci.org/mschemmel/corrnet.svg?branch=master)](https://travis-ci.org/mschemmel/corrnet)
 
 # corrnet
