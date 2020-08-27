@@ -15,7 +15,7 @@ class net():
         # import edge list
         # transform edge list (data frame) to edge list (networkx)
         self.df = data
-        self.df["color"] = np.where(self.df['direction'] == 1, '#E3CD81FF', '#9E1030FF')
+        self.df["color"] = np.where(self.df['direction'] == "1", '#E3CD81FF', '#9E1030FF')
         self.edgelist = nx.from_pandas_edgelist(self.df, source = 'source', target = 'target')
     
     def nodes_and_edges(self):
@@ -26,8 +26,9 @@ class net():
         f = plt.figure(figsize=(10, 10))
 
         #set layout to circular layout
-        layout = nx.circular_layout(self.edgelist)
-
+        #layout = nx.circular_layout(self.edgelist)
+        layout = nx.spring_layout(self.edgelist, k=0.15,iterations=20)
+        
         # Go through every zotu -> how many connections?
         # calculate circle size according to number of connections
         zotus = list(self.df.source.unique())
@@ -37,7 +38,8 @@ class net():
         nx.draw_networkx_nodes(self.edgelist, 
                                layout, 
                                nodelist = zotus, 
-                               node_size = zotu_size,
+                               #node_size = zotu_size,
+                               node_size = 5, 
                                node_color = '#89ABE3FF')
 
         # draw all edges based on previously determined properties
@@ -64,8 +66,8 @@ class net():
         return(nx.info(self.edgelist))
 
     def relation_info(self):
-        positive = len(self.df[self.df["direction"] == 1])
-        negative = len(self.df[self.df["direction"] == -1])
+        positive = len(self.df[self.df["direction"] == "1"])
+        negative = len(self.df[self.df["direction"] == "-1"])
         return "Positive: {}\t Negative: {}".format(positive, negative)
     
     def summary(self):
