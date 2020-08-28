@@ -68,8 +68,13 @@ class net():
     def relation_info(self):
         positive = len(self.df[self.df["direction"] == "1"])
         negative = len(self.df[self.df["direction"] == "-1"])
-        return "Positive: {}\t Negative: {}".format(positive, negative)
 
+        # test if number of edges are equal before reporting informations about relations
+        if ((positive + negative) == nx.number_of_edges(self.edgelist)):
+          return("Positive: {}\t Negative: {}".format(positive, negative))
+        else:
+          return("ERROR: Number of edges differ.")
+    
     def summary(self):
         return([self.get_network_info(), self.relation_info(), self.get_density_value()])
     
