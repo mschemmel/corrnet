@@ -39,7 +39,7 @@ class net():
                                layout, 
                                nodelist = zotus, 
                                #node_size = zotu_size,
-                               node_size = 5, 
+                               node_size = 7, 
                                node_color = '#89ABE3FF')
 
         # draw all edges based on previously determined properties
@@ -55,7 +55,7 @@ class net():
     def get_density_value(self):
         # https://en.wikipedia.org/wiki/Degree_distribution
         # Density: The proportion of direct ties in a network relative to the total number possible.
-        return("Density: {}".format(nx.density(self.edgelist)))
+        return("Density: {}".format(round(nx.density(self.edgelist), 3)))
     
     def get_degree_values(self, sort = True):
         degrees = list(nx.degree(self.edgelist))
