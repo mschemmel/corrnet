@@ -69,14 +69,14 @@ class net():
         positive = len(self.df[self.df["direction"] == "1"])
         negative = len(self.df[self.df["direction"] == "-1"])
         return "Positive: {}\t Negative: {}".format(positive, negative)
-    
+
     def summary(self):
         return([self.get_network_info(), self.relation_info(), self.get_density_value()])
     
     def plot_degree_hist(self):
         # set subplot properties
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8,3))
-        fig.suptitle('Degree distribution')
+        fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(8,3))
+        fig.suptitle('Degree distribution and relation')
         
         degree_freq = nx.degree_histogram(self.edgelist)
         degrees = range(len(degree_freq))
@@ -99,4 +99,15 @@ class net():
         ax2.spines["top"].set_visible(False)
         ax2.spines["right"].set_visible(False)   
         
+        # get number of positive and negative relations (same as function -> relation.info())
+        positive = len(self.df[self.df["direction"] == "1"])
+        negative = len(self.df[self.df["direction"] == "-1"])
+        
+        ax3.bar(["Pos", "Neg"], [positive,negative], width=0.80, color='#89ABE3FF')
+        ax3.set_ylabel('Count')
+        ax3.set_xlabel('Relation')
+        ax3.spines["top"].set_visible(False)
+        ax3.spines["right"].set_visible(False)   
+        
         return(fig)
+
