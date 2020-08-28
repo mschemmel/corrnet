@@ -32,6 +32,7 @@ def main():
       edges = data.edges()
       if not edges.empty:
           data_net = etn.net(edges)
+          
           print("")
           print("## Network Summary")
           for element in data_net.summary():

@@ -57,7 +57,7 @@ class edgelist():
       
       return(df)
 
-  def summary(self, edges):
+  def summary_of_edges(self, from_edges):
       """
       Function to display a short summary about the resulting
       EDGE and NODE lists and their respective number
@@ -67,11 +67,12 @@ class edgelist():
       # number of col = df.shape[1]
 
       print("\n## Summary")
-      print("No. of edges = {}".format(edges.shape[0]))
+      print("No. of edges = {}".format(from_edges.shape[0]))
       print("Range:")
-      print("\tpval:\t{}..{}".format(edges["pval"].min(), edges["pval"].max()))
-      print("\tweight:\t{}..{}".format(edges["weight"].min(), edges["weight"].max()))
- 
+      print("\tpval:\t{}..{}".format(from_edges["pval"].min(), from_edges["pval"].max()))
+      print("\tweight:\t{}..{}".format(from_edges["weight"].min(), from_edges["weight"].max()))
+
+
   def edges(self):
 
       # import required files 
@@ -103,7 +104,9 @@ class edgelist():
           print("\n## Parameter")
           print("correlation threshold: {}".format(self.clim))
           print("p-value threshold: {}".format(self.plim))
-          print(self.summary(finalFrame))
+          
+          # show summary of edges
+          self.summary_of_edges(finalFrame)
           return(finalFrame)
       else:
           print("ERROR: Something went wrong on building the edgelist.")
