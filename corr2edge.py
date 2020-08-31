@@ -38,7 +38,7 @@ class edgelist():
 
   def compare_order(self, df1, df2, name):
       """
-      Function which evaluats the order of two columns of a dataframe(s) to make sure both
+      Function which evaluates the order of two columns of a dataframe(s) to make sure both
       columns have the same order.
       Returns TRUE if the order is the same.
       Returns FALSE if the order differs.
@@ -76,8 +76,9 @@ class edgelist():
   def edges(self):
 
       # import required files 
-      corr = pd.read_csv(self.cormat, sep = "\t", index_col = 0)
-      pval = pd.read_csv(self.pmat, sep = "\t", index_col = 0)
+      corr = pd.read_table(self.cormat, sep = "\t", index_col = '#OTU ID')
+      pval = pd.read_table(self.pmat, sep = "\t", index_col = '#OTU ID')
+
       
       # shape dataframe to required format -> edge_list
       corr_el = self.filter_and_stack(corr)
@@ -93,8 +94,9 @@ class edgelist():
           merged.columns = ["source", "target", "weight", "pval"]
           
           # filter final frame by weight and p value
-          finalFrame = self.filter_relevant(merged, float(self.plim), float(self.clim))
+          finalFrame = self.filter_relevant(merged, float(self.plim), float(self.clim))        
           finalFrame["direction"] = np.where(finalFrame["weight"] < 0, "-1", "1")
+
       else:
           print("ERROR: Correlation and pvalue matrix do not have the same order")
           sys.exit(0)
