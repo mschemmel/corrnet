@@ -67,10 +67,11 @@ class edgelist():
       # number of col = df.shape[1]
 
       print("\n## Summary")
-      print("No. of edges = {}".format(from_edges.shape[0]))
+      print(f"No. of edges = {from_edges.shape[0]}")
+      
       print("Range:")
-      print("\tpval:\t{}..{}".format(from_edges["pval"].min(), from_edges["pval"].max()))
-      print("\tweight:\t{}..{}".format(from_edges["weight"].min(), from_edges["weight"].max()))
+      print(f"pval:\t{from_edges['pval'].min()}..{from_edges['pval'].max()}")
+      print(f"weight:\t{from_edges['weight'].min()}..{from_edges['weight'].max()}")
 
 
   def edges(self):
@@ -104,8 +105,8 @@ class edgelist():
       # save edge_list and node_list to file if frame is not 'None'
       if finalFrame is not None:           
           print("\n## Parameter")
-          print("correlation threshold: {}".format(self.clim))
-          print("p-value threshold: {}".format(self.plim))
+          print(f"correlation threshold: {self.clim}")
+          print(f"p-value threshold: {self.plim}")
           
           # show summary of edges
           self.summary_of_edges(finalFrame)

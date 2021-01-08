@@ -55,7 +55,7 @@ class net():
     def get_density_value(self):
         # https://en.wikipedia.org/wiki/Degree_distribution
         # Density: The proportion of direct ties in a network relative to the total number possible.
-        return("Density: {}".format(round(nx.density(self.edgelist), 3)))
+        return(f"Density: {round(nx.density(self.edgelist), 3)}")
     
     def get_degree_values(self, sort = True):
         degrees = list(nx.degree(self.edgelist))
@@ -71,7 +71,7 @@ class net():
 
         # test if number of edges are equal before reporting informations about relations
         if ((positive + negative) == nx.number_of_edges(self.edgelist)):
-          return("Positive: {}\t Negative: {}".format(positive, negative))
+          return(f"Positive: {positive}\t Negative: {negative}")
         else:
           return("ERROR: Number of edges differ.")
     
