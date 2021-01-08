@@ -34,7 +34,7 @@ Optional:
 ### Run
 
 ```
-python3 corrnet.py -cm correlation.tsv -pm pvalue.tsv --prefix firstproject 
+python3 corrnet.py -cm random_correlation.tsv -pm random_p_pvalue.tsv --prefix firstproject 
 ```
 
 ## Output
