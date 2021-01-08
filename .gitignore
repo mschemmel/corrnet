@@ -1,2 +1,3 @@
 *.swp
 firstproject/
+__pycache__/
