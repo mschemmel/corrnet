@@ -13,7 +13,7 @@ The additional python packages below are required:
 - matplotlib
 - networkx
 
-### Arguments description
+### Argument description
 Following input is required to run the script:
 | Argument | Type | Comment |
 | --- | --- | --- | 
@@ -25,6 +25,7 @@ Optional:
 | --- | --- |
 | -clim | numeric |
 | -plim | numeric |
+| -dlim | numeric |
 | -out | character |
 | --prefix | character |
 
@@ -35,6 +36,7 @@ Optional:
     -pm     p-value matrix
     -clim   Threshold of correlation matrix (Default: 0.7)
     -plim   Threshold of p-value matrix (Default: 0.05)
+    -dlim   Threshold of outgoing connections (degree) of source nodes (Default: 5)
     -out    Path for generated output. If not provided, current working directory is used.
     -pre    Prefix used to name output folder and files (Default: corrnet)
 
