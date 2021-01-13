@@ -14,15 +14,15 @@ The additional python packages below are required:
 - networkx
 
 Following input is required to run the script:
-- correlation matrix -> tabular separated (.tsv) 
-- p-value matrix -> tabular separated (.tsv)
+- correlation matrix ~~-cm~~ -> tabular separated (.tsv) 
+- p-value matrix ~~-pm~~ -> tabular separated (.tsv)
 
 Optional:
 | Argument | Type |
 | --- | --- |
-| clim | numeric |
-| plim | numeric |
-| prefix | character |
+| -clim | numeric |
+| -plim | numeric |
+| --prefix | character |
 
 
 ## Usage
