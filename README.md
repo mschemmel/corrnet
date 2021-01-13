@@ -17,8 +17,8 @@ The additional python packages below are required:
 Following input is required to run the script:
 | Argument | Type | Comment |
 | --- | --- | --- | 
-| `-cm` | float values | tabular separated (.tsv)
-| `-pm` | float values | tabular separated (.tsv)
+| `-cm` | float | tabular separated (.tsv)
+| `-pm` | float | tabular separated (.tsv)
 
 Optional:
 | Argument | Type | Default |
