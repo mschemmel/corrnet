@@ -14,8 +14,10 @@ The additional python packages below are required:
 - networkx
 
 Following input is required to run the script:
-- correlation matrix `-cm` -> tabular separated (.tsv) 
-- p-value matrix `-pm` -> tabular separated (.tsv)
+| Argument | Type | Comment |
+| --- | --- | --- | 
+| -cm | float values | tabular separated (.tsv)
+| -pm | float values | tabular separated (.tsv)
 
 Optional:
 | Argument | Type |
