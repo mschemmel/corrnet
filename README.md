@@ -18,9 +18,12 @@ Following input is required to run the script:
 - p-value matrix -> tabular separated (.tsv)
 
 Optional:
-- correlation limit -> numerical value
-- p-value limit -> numerical value 
-- prefix 
+| Argument | Type |
+| --- | --- |
+| clim | numeric |
+| plim | numeric |
+| prefix | character |
+
 
 ## Usage
 ### Parameter
