@@ -77,8 +77,8 @@ class edgelist():
   def edges(self):
 
       # import required files 
-      corr = pd.read_table(self.cormat, sep = "\t", index_col = '#OTU ID')
-      pval = pd.read_table(self.pmat, sep = "\t", index_col = '#OTU ID')
+      corr = pd.read_table(self.cormat, sep = "\t", index_col = 0)
+      pval = pd.read_table(self.pmat, sep = "\t", index_col = 0)
 
       
       # shape dataframe to required format -> edge_list
