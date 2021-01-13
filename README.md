@@ -13,6 +13,7 @@ The additional python packages below are required:
 - matplotlib
 - networkx
 
+### Arguments description
 Following input is required to run the script:
 | Argument | Type | Comment |
 | --- | --- | --- | 
@@ -24,6 +25,7 @@ Optional:
 | --- | --- |
 | -clim | numeric |
 | -plim | numeric |
+| -out | character |
 | --prefix | character |
 
 
