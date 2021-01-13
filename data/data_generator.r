@@ -1,10 +1,10 @@
 org <- 10
-sample <- 50
+samples <- 50
 
 # otu table
-otu <- matrix(sample.int(500, org * sample, replace = TRUE), org, sample)
+otu <- matrix(sample.int(500, org * samples, replace = TRUE), org, samples)
 rownames(otu) <- paste0("org", seq(1, org, 1))
-colnames(otu) <- paste0("sample", seq(1, sample, 1))
+colnames(otu) <- paste0("sample", seq(1, samples, 1))
 write.table(otu, "otu_table.tsv", quote = FALSE, sep = "\t", col.names = TRUE)
 
 # p value
