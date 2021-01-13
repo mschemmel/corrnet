@@ -17,17 +17,17 @@ The additional python packages below are required:
 Following input is required to run the script:
 | Argument | Type | Comment |
 | --- | --- | --- | 
-| -cm | float values | tabular separated (.tsv)
-| -pm | float values | tabular separated (.tsv)
+| `-cm` | float values | tabular separated (.tsv)
+| `-pm` | float values | tabular separated (.tsv)
 
 Optional:
-| Argument | Type |
-| --- | --- |
-| -clim | numeric |
-| -plim | numeric |
-| -dlim | numeric |
-| -out | character |
-| --prefix | character |
+| Argument | Type | Default |
+| --- | --- | --- |
+| `-clim` | numeric | 0.7 |
+| `-plim` | numeric | 0.05 |
+| `-dlim` | numeric | 5 |
+| `-out` | character | current working directory |
+| `--prefix` | character | firstproject |
 
 
 ## Usage
