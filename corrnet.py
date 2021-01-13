@@ -50,7 +50,7 @@ def main():
               print("ERROR: Output directory could not be created: Path not found.")
               sys.exit(0)
 
-          edges.to_csv("{}/edge_list_{}.tsv".format(out_dir, pref), index = None, sep = '\t', mode = 'w')
+          edges.to_csv(f"{out_dir}/edge_list_{pref}.tsv", index = None, sep = '\t', mode = 'w')
           network = data_net.plot_network()
           network.savefig(os.path.join(out_dir, "network.pdf"), bbox_inches = 'tight')
           
