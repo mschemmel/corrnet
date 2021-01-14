@@ -42,7 +42,7 @@ Optional:
 
 ### Run
 
-```
+```bash
 python3 corrnet.py -cm ./data/random_correlation.tsv -pm ./data/random_p_value.tsv --prefix firstproject 
 ```
 
