@@ -18,7 +18,7 @@ def main():
 
 
 	if (args.corrmat and args.pmat):
-			# check correlation threshold and pvalue threshold
+			# check correlation, p-value and degree threshold
 			clim = args.corrlimit if args.corrlimit else 0.7
 			plim = args.plimit if args.plimit else 0.05
 			dlim = args.dlimit if args.dlimit else 5

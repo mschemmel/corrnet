@@ -20,9 +20,16 @@ class net():
 			
 
 		def nodes_and_edges(self):
+				'''
+				Return number of nodes and number of edges of network
+				'''
 				return(nx.number_of_nodes(self.edgelist), nx.number_of_edges(self.edgelist))
 		
 		def plot_network(self, pltTitle = "Default"):
+				'''
+				Plot network with previously prepared edge list and export as .pdf file.
+				Further, export histogram of network connections
+				'''
 				# set figure size
 				f = plt.figure(figsize=(10, 10))
 
@@ -54,19 +61,31 @@ class net():
 				return(f)
 				
 		def get_density_value(self):
+				'''
+				Return density value of network
+				'''
 				# https://en.wikipedia.org/wiki/Degree_distribution
 				# Density: The proportion of direct ties in a network relative to the total number possible.
 				return(f"Density: {round(nx.density(self.edgelist), 3)}")
 		
 		def get_degree_values(self, sort = True):
+				'''
+				Get degree values of network
+				'''
 				degrees = list(nx.degree(self.edgelist))
 				if sort : degrees.sort(key = lambda x:x[1])
 				return(degrees)
 		
 		def get_network_info(self):
+				'''
+				Print network info
+				'''
 				return(nx.info(self.edgelist))
 
 		def relation_info(self):
+				'''
+				Get and return number of positive and negative edges
+				'''
 				positive = len(self.df[self.df["direction"] == "1"])
 				negative = len(self.df[self.df["direction"] == "-1"])
 
@@ -77,9 +96,15 @@ class net():
 					return("ERROR: Number of edges differ.")
 		
 		def summary(self):
+				'''
+				Print summary information of network
+				'''
 				return([self.get_network_info(), self.relation_info(), self.get_density_value()])
 		
 		def plot_degree_hist(self):
+				'''
+				Build degree histogram of edge list
+				'''
 				# set subplot properties
 				fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(8,3))
 				fig.suptitle('Degree distribution and relation')

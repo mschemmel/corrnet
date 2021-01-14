@@ -77,6 +77,9 @@ class edgelist():
 
 
 	def edges(self):
+			'''
+			Read table, create edgelist, filter by p-value, correlation threshold and degree
+			'''
 			# import required files 
 			corr = pd.read_table(self.cormat, sep = "\t", index_col = 0)
 			pval = pd.read_table(self.pmat, sep = "\t", index_col = 0)
