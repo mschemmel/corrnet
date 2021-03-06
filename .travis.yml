@@ -13,5 +13,5 @@ before_install:
         - pip3 install -r requirements.txt
 script:
         - python3 corrnet.py -cm ./data/random_correlation.tsv -pm ./data/random_p_value.tsv --prefix firstproject
-notification:
+notifications:
         email: false
