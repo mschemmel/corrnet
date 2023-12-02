@@ -34,8 +34,10 @@ class net():
 				f = plt.figure(figsize=(10, 10))
 
 				#set layout to circular layout
-				layout = nx.circular_layout(self.edgelist)
-				#layout = nx.spring_layout(self.edgelist, k=0.15,iterations=20)
+				#layout = nx.circular_layout(self.edgelist)
+				layout = nx.spring_layout(self.edgelist, k=0.15,iterations=20)
+				#layout = nx.kamada_kawai_layout(self.edgelist)
+				#layout = nx.shell_layout(self.edgelist)
 				
 				# Go through every zotu -> how many connections?
 				# calculate circle size according to number of connections
@@ -76,12 +78,6 @@ class net():
 				if sort : degrees.sort(key = lambda x:x[1])
 				return(degrees)
 		
-		def get_network_info(self):
-				'''
-				Print network info
-				'''
-				return(nx.info(self.edgelist))
-
 		def relation_info(self):
 				'''
 				Get and return number of positive and negative edges
@@ -99,7 +95,7 @@ class net():
 				'''
 				Print summary information of network
 				'''
-				return([self.get_network_info(), self.relation_info(), self.get_density_value()])
+				return([self.relation_info(), self.get_density_value()])
 		
 		def plot_degree_hist(self):
 				'''
