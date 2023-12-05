@@ -56,8 +56,7 @@ class edgelist():
 			df = df[(df["pval"] < pval) & (df["pval"] != 0)]
 			
 			#https://stackoverflow.com/questions/49137031/pandas-dataframe-delete-rows-with-low-frequency
-			df = df[df.groupby('source')['source'].transform('count').ge(int(degree_threshold))]	
-			return(df)
+			return(df[df.groupby('source')['source'].transform('count').ge(int(degree_threshold))])
 
 	def summary_of_edges(self, from_edges):
 			"""
@@ -94,11 +93,11 @@ class edgelist():
 			target = self.compare_order(corr_el, pval_el, "target")
 
 			if source and target:
-					merged = pd.concat([corr_el, pval_el["weight"]], axis = 1, ignore_index = True)				 
+					merged = pd.concat([corr_el, pval_el["weight"]], axis = 1, ignore_index = True)
 					merged.columns = ["source", "target", "weight", "pval"]
 					
 					# filter final frame by weight and p value
-					finalFrame = self.filter_relevant(merged, float(self.plim), float(self.clim), self.dlim)				 
+					finalFrame = self.filter_relevant(merged, float(self.plim), float(self.clim), self.dlim)
 					finalFrame["direction"] = np.where(finalFrame["weight"] < 0, "-1", "1")
 			
 			else:
@@ -106,18 +105,9 @@ class edgelist():
 					sys.exit(0)
 			
 			# save edge_list and node_list to file if frame is not 'None'
-			if finalFrame is not None:					 
-					print("\n## Parameter")
-					print(f"correlation threshold: {self.clim}")
-					print(f"p-value threshold: {self.plim}")
-					
-					# show summary of edges
+			if finalFrame is not None:
 					self.summary_of_edges(finalFrame)
 					return(finalFrame)
 			else:
 					print("ERROR: Something went wrong on building the edgelist.")
 					sys.exit(0)
-
-
-
-
