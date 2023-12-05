@@ -54,9 +54,6 @@ def main():
 					edges.to_csv(f"{out_dir}/edge_list_{pref}.tsv", index = None, sep = '\t', mode = 'w')
 					network = data_net.plot_network()
 					network.savefig(os.path.join(out_dir, "network.pdf"), bbox_inches = 'tight')
-					
-					degree_histogram = data_net.plot_degree_hist()
-					degree_histogram.savefig(os.path.join(out_dir, "histogram.pdf"), bbox_inches = 'tight') 
 			else:
 				print("ERROR: edge list dataframe is empty. Nothing more to do.") 
 if __name__ == "__main__":
