@@ -43,11 +43,10 @@ Optional:
 ### Run
 
 ```bash
-python3 corrnet.py -cm ./data/random_correlation.tsv -pm ./data/random_p_value.tsv --prefix firstproject 
+python3 corrnet.py -cm ./data/random_correlation.tsv -pm ./data/random_p_value.tsv
 ```
 
 ## Output
-- edgelist (columns: source, target, weight, pval, direction, color)
+- adjancy list (columns: source, target, weight, pval, direction, color)
 - network plot
-- network degree distribution plot
 
